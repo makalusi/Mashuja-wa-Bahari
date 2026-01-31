@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navigation from './sections/Navigation';
 import Hero from './sections/Hero';
+import ImpactSection from './sections/ImpactSection';
 import About from './sections/About';
 import Destinations from './sections/Destinations';
 import CTA from './sections/CTA';
@@ -22,6 +23,7 @@ function App() {
     <div className="min-h-screen bg-cream overflow-x-hidden">
       <Navigation scrollY={scrollY} />
       <Hero />
+      <ImpactSection />
       <About />
       <Destinations />
       <CTA />

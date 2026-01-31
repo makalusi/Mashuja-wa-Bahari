@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -37,11 +37,11 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Montserrat', sans-serif;
@@ -52,11 +52,11 @@
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .custom-expo {
     transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
-  
+
   .fluid-scroll {
     transition-timing-function: cubic-bezier(0.62, 0.05, 0.01, 0.99);
   }
@@ -115,7 +115,7 @@
   height: 4px;
 }
 
-.horizontal-scroll > * {
+.horizontal-scroll>* {
   scroll-snap-align: start;
   flex-shrink: 0;
 }
@@ -154,6 +154,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -165,11 +166,25 @@
 }
 
 /* Staggered animation delays */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
-.stagger-5 { animation-delay: 0.5s; }
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.stagger-5 {
+  animation-delay: 0.5s;
+}
 
 /* Hero parallax */
 .hero-parallax {
