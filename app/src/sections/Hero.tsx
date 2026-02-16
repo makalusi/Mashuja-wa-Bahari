@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+<<<<<<< HEAD
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+=======
+import { ArrowRight, ChevronDown } from 'lucide-react';
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -76,7 +80,11 @@ const Hero = () => {
         <div className="w-[75%] mx-auto">
           {/* Headline */}
           <h1
+<<<<<<< HEAD
             className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-white mb-8 tracking-tight font-stylish transition-all duration-1000 custom-expo ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+=======
+            className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white mb-8 tracking-tighter transition-all duration-1000 custom-expo ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
               }`}
             style={{ transitionDelay: '0.2s' }}
           >
@@ -110,12 +118,21 @@ const Hero = () => {
               </span>
               <div className="absolute inset-0 bg-sage-dark transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
             </a>
+<<<<<<< HEAD
             <Link
               to="/gallery"
               className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border border-white/30 transition-all duration-300 hover:bg-white/20 hover:scale-105"
             >
               View Gallery
             </Link>
+=======
+            <a
+              href="#categories"
+              className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border border-white/30 transition-all duration-300 hover:bg-white/20 hover:scale-105"
+            >
+              View Gallery
+            </a>
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
           </div>
         </div>
       </div>

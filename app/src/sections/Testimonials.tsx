@@ -16,7 +16,11 @@ const testimonials: Testimonial[] = [
     name: 'Sarah Mitchell',
     role: 'Weekend Explorer',
     avatar: '/avatar-sarah.jpg',
+<<<<<<< HEAD
     content: 'Mashuja wa bahari made our anniversary camping trip absolutely perfect. The equipment was top-notch and the booking process was seamless. We\'ll definitely be coming back for all our outdoor adventures!',
+=======
+    content: 'Nomad Gear made our anniversary camping trip absolutely perfect. The equipment was top-notch and the booking process was seamless. We\'ll definitely be coming back for all our outdoor adventures!',
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
     rating: 5,
   },
   {
@@ -24,7 +28,11 @@ const testimonials: Testimonial[] = [
     name: 'John Peterson',
     role: 'Solo Adventurer',
     avatar: '/avatar-john.jpg',
+<<<<<<< HEAD
     content: 'As someone who camps solo frequently, having reliable gear is crucial. Mashuja wa bahari\'s Solo Adventure kit has everything I need without the bulk. Lightweight, durable, and affordable.',
+=======
+    content: 'As someone who camps solo frequently, having reliable gear is crucial. Nomad Gear\'s Solo Adventure kit has everything I need without the bulk. Lightweight, durable, and affordable.',
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
     rating: 5,
   },
   {
@@ -32,7 +40,11 @@ const testimonials: Testimonial[] = [
     name: 'Mike Thompson',
     role: 'Family Camper',
     avatar: '/avatar-mike.jpg',
+<<<<<<< HEAD
     content: 'Took the family on our first camping trip with gear from Mashuja wa bahari. The kids had a blast and everything worked perfectly. The tent was spacious and the sleeping bags kept everyone warm.',
+=======
+    content: 'Took the family on our first camping trip with gear from Nomad. The kids had a blast and everything worked perfectly. The tent was spacious and the sleeping bags kept everyone warm.',
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
     rating: 5,
   },
 ];
@@ -70,8 +82,14 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Section Header */}
         <div
+<<<<<<< HEAD
           className={`text-center mb-16 transition-all duration-1000 custom-expo ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
+=======
+          className={`text-center mb-16 transition-all duration-1000 custom-expo ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
         >
           <span className="inline-block px-4 py-1.5 bg-sage/10 text-sage text-sm font-medium rounded-full mb-4">
             Testimonials
@@ -80,7 +98,11 @@ const Testimonials = () => {
             What our customers say
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+<<<<<<< HEAD
             Join thousands of happy campers who trust Mashuja wa bahari for their outdoor adventures.
+=======
+            Join thousands of happy campers who trust Nomad Gear for their outdoor adventures.
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
           </p>
         </div>
 
@@ -89,8 +111,14 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
+<<<<<<< HEAD
               className={`relative transition-all duration-700 custom-expo ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
+=======
+              className={`relative transition-all duration-700 custom-expo ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+              }`}
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
               style={{ transitionDelay: `${index * 0.15}s` }}
             >
               <div className="bg-white rounded-3xl p-8 shadow-soft h-full card-lift">
@@ -130,8 +158,14 @@ const Testimonials = () => {
 
         {/* Trust Badges */}
         <div
+<<<<<<< HEAD
           className={`flex flex-wrap items-center justify-center gap-8 mt-16 pt-16 border-t border-sage/10 transition-all duration-1000 custom-expo ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
+=======
+          className={`flex flex-wrap items-center justify-center gap-8 mt-16 pt-16 border-t border-sage/10 transition-all duration-1000 custom-expo ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
           style={{ transitionDelay: '0.6s' }}
         >
           <div className="text-center">

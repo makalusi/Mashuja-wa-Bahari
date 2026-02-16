@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+<<<<<<< HEAD
 import { MapPin, Star, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+=======
+import { MapPin, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
 
 interface Destination {
   id: number;
@@ -14,6 +18,7 @@ interface Destination {
 const destinations: Destination[] = [
   {
     id: 1,
+<<<<<<< HEAD
     name: 'Abyssal Rhythm',
     location: 'Coastal Collection',
     rating: 4.9,
@@ -59,6 +64,53 @@ const destinations: Destination[] = [
     rating: 4.9,
     image: '/assets/art/art-06.jpg',
     description: 'Protecting the treasures beneath.',
+=======
+    name: 'Alpine Lake',
+    location: 'Sierra Nevada, CA',
+    rating: 4.9,
+    image: '/dest-alpine.jpg',
+    description: 'Crystal clear waters surrounded by majestic peaks',
+  },
+  {
+    id: 2,
+    name: 'Redwood Grove',
+    location: 'Northern California',
+    rating: 4.8,
+    image: '/dest-redwoods.jpg',
+    description: 'Camp among the world\'s tallest trees',
+  },
+  {
+    id: 3,
+    name: 'Coastal Cliffs',
+    location: 'Big Sur, CA',
+    rating: 4.9,
+    image: '/dest-coastal.jpg',
+    description: 'Dramatic ocean views and stunning sunsets',
+  },
+  {
+    id: 4,
+    name: 'Desert Oasis',
+    location: 'Joshua Tree, CA',
+    rating: 4.7,
+    image: '/dest-desert.jpg',
+    description: 'Unique rock formations and starry nights',
+  },
+  {
+    id: 5,
+    name: 'Mountain Meadow',
+    location: 'Rocky Mountains, CO',
+    rating: 4.8,
+    image: '/dest-meadow.jpg',
+    description: 'Wildflower fields and babbling brooks',
+  },
+  {
+    id: 6,
+    name: 'Lakeside Haven',
+    location: 'Lake Tahoe, CA/NV',
+    rating: 4.9,
+    image: '/dest-lakeside.jpg',
+    description: 'Pristine waters and alpine beauty',
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
   },
 ];
 
@@ -132,6 +184,7 @@ const Destinations = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div
+<<<<<<< HEAD
           className={`flex flex-col md:flex-row md:items-end md:justify-between mb-12 transition-all duration-1000 custom-expo ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
         >
@@ -144,6 +197,21 @@ const Destinations = () => {
             </h2>
             <p className="text-cream/70 mt-4 max-w-lg">
               Witness the beauty of the ocean — and the urgency to protect it.
+=======
+          className={`flex flex-col md:flex-row md:items-end md:justify-between mb-12 transition-all duration-1000 custom-expo ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <div>
+            <span className="inline-block px-4 py-1.5 bg-white/10 text-cream text-sm font-medium rounded-full mb-4">
+              Inspiration
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-cream">
+              Destination Ideas
+            </h2>
+            <p className="text-cream/70 mt-4 max-w-lg">
+              Discover breathtaking campsites recommended by our community of adventurers.
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
             </p>
           </div>
 
@@ -152,20 +220,36 @@ const Destinations = () => {
             <button
               onClick={() => scroll('left')}
               disabled={!canScrollLeft}
+<<<<<<< HEAD
               className={`w-12 h-12 rounded-full border-2 border-cream/30 flex items-center justify-center transition-all duration-300 ${canScrollLeft
                 ? 'text-cream hover:bg-cream hover:text-sage-dark'
                 : 'text-cream/30 cursor-not-allowed'
                 }`}
+=======
+              className={`w-12 h-12 rounded-full border-2 border-cream/30 flex items-center justify-center transition-all duration-300 ${
+                canScrollLeft
+                  ? 'text-cream hover:bg-cream hover:text-sage-dark'
+                  : 'text-cream/30 cursor-not-allowed'
+              }`}
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={() => scroll('right')}
               disabled={!canScrollRight}
+<<<<<<< HEAD
               className={`w-12 h-12 rounded-full border-2 border-cream/30 flex items-center justify-center transition-all duration-300 ${canScrollRight
                 ? 'text-cream hover:bg-cream hover:text-sage-dark'
                 : 'text-cream/30 cursor-not-allowed'
                 }`}
+=======
+              className={`w-12 h-12 rounded-full border-2 border-cream/30 flex items-center justify-center transition-all duration-300 ${
+                canScrollRight
+                  ? 'text-cream hover:bg-cream hover:text-sage-dark'
+                  : 'text-cream/30 cursor-not-allowed'
+              }`}
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -182,19 +266,33 @@ const Destinations = () => {
         {destinations.map((destination, index) => (
           <div
             key={destination.id}
+<<<<<<< HEAD
             className={`flex-shrink-0 w-72 transition-all duration-700 custom-expo ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
+=======
+            className={`flex-shrink-0 w-72 transition-all duration-700 custom-expo ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+            }`}
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
             style={{ transitionDelay: `${index * 0.1}s` }}
           >
             <a href="#" className="block group">
               {/* Polaroid Frame */}
               <div className="polaroid rounded-sm rotate-0 hover:rotate-1 transition-transform duration-300">
                 {/* Image */}
+<<<<<<< HEAD
                 <div className="relative overflow-hidden">
                   <img
                     src={destination.image}
                     alt={destination.name}
                     className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+=======
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <img
+                    src={destination.image}
+                    alt={destination.name}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
                   />
                   {/* Rating Badge */}
                   <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-1.5">
@@ -209,9 +307,15 @@ const Destinations = () => {
                     <MapPin className="w-3.5 h-3.5" />
                     <span className="text-xs">{destination.location}</span>
                   </div>
+<<<<<<< HEAD
                   <p className="font-bold text-sage-dark text-lg group-hover:text-sage transition-colors font-sans">
                     {destination.name}
                   </p>
+=======
+                  <h3 className="font-bold text-sage-dark text-lg group-hover:text-sage transition-colors">
+                    {destination.name}
+                  </h3>
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
                   <p className="text-sm text-muted-foreground mt-1">
                     {destination.description}
                   </p>
@@ -222,6 +326,7 @@ const Destinations = () => {
         ))}
       </div>
 
+<<<<<<< HEAD
       {/* Explore Full Gallery Button */}
       <div
         className={`flex justify-center mt-12 md:mt-16 transition-all duration-1000 custom-expo ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -240,6 +345,8 @@ const Destinations = () => {
         </Link>
       </div>
 
+=======
+>>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
       {/* Hide scrollbar style */}
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {
