@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useSpring, useTransform, useInView, AnimatePresence } from 'framer-motion';
 import MashujaaImg from '../assets/Mashujaa.png';
 import ArtImg1 from '../assets/Art-1.jpg';
