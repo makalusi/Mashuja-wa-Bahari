@@ -72,64 +72,86 @@ const Gallery = () => {
 
             {/* Main Content */}
             <main className="relative z-10 container mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-24 max-w-7xl">
-                {/* Header Section */}
-                <div className="text-center max-w-4xl mx-auto mb-20 space-y-8">
+                <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.1,
+                                delayChildren: 0.2
+                            }
+                        }
+                    }}
+                >
+                    {/* Header Section */}
+                    <motion.div
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                        }}
+                        className="text-center max-w-4xl mx-auto mb-20 space-y-8"
+                    >
+                        <h1 className="font-stylish text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white drop-shadow-xl max-w-5xl mx-auto">
+                            Where Art Meets the Ocean’s Fight for Survival. Explore marine-inspired works that give back to the waters that inspire them.
+                        </h1>
 
+                        <div className="pt-4">
 
-                    <h1 className="font-stylish text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white drop-shadow-xl max-w-5xl mx-auto">
-                        Where Art Meets the Ocean’s Fight for Survival. Explore marine-inspired works that give back to the waters that inspire them.
-                    </h1>
+                        </div>
+                    </motion.div>
 
-                    <div className="pt-4">
-
+                    {/* Gallery Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+                        {artworks.map((artwork) => (
+                            <motion.div
+                                key={artwork.id}
+                                layoutId={`artwork-${artwork.id}`}
+                                variants={{
+                                    hidden: { opacity: 0, y: 30 },
+                                    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+                                }}
+                                onClick={() => setSelectedArtwork(artwork)}
+                                className="wavy-card bg-white p-3 group cursor-pointer rounded-[2rem] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.3)]"
+                                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                            >
+                                <div className="relative overflow-hidden rounded-[1.5rem] bg-blue-100 aspect-[4/3]">
+                                    <motion.img
+                                        src={artwork.image}
+                                        alt={artwork.title}
+                                        className="w-full h-full object-cover saturate-150 contrast-125"
+                                    />
+                                    {/* Hover Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-6 z-10">
+                                        <span className="text-white font-medium text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                            {artwork.title}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="flex justify-end pt-3 pb-1 px-2">
+                                    <div className="inline-flex items-center gap-1 text-base font-semibold text-cyan-600 group-hover:text-cyan-500 transition-colors">
+                                        Learn more
+                                        <svg
+                                            className="w-5 h-5 mt-0.5"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
-                </div>
-
-                {/* Gallery Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-                    {artworks.map((artwork) => (
-                        <motion.div
-                            key={artwork.id}
-                            layoutId={`artwork-${artwork.id}`}
-                            onClick={() => setSelectedArtwork(artwork)}
-                            className="wavy-card bg-white p-3 group cursor-pointer rounded-[2rem] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.3)]"
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <div className="relative overflow-hidden rounded-[1.5rem] bg-blue-100 aspect-[4/3]">
-                                <motion.img
-                                    src={artwork.image}
-                                    alt={artwork.title}
-                                    className="w-full h-full object-cover saturate-150 contrast-125"
-                                />
-                                {/* Hover Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-6 z-10">
-                                    <span className="text-white font-medium text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        {artwork.title}
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="flex justify-end pt-3 pb-1 px-2">
-                                <div className="inline-flex items-center gap-1 text-base font-semibold text-cyan-600 group-hover:text-cyan-500 transition-colors">
-                                    Learn more
-                                    <svg
-                                        className="w-5 h-5 mt-0.5"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                        />
-                                    </svg>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+                </motion.div>
             </main>
 
             {/* Interactive Lightbox */}

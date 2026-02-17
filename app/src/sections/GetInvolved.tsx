@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Check, Loader2 } from 'lucide-react';
+import UnderwaterBg from '../assets/BB-03.jpg';
 
 interface FormData {
     fullName: string;
@@ -112,7 +113,7 @@ const GetInvolved = () => {
             {/* Background Image */}
             <div className="absolute inset-0">
                 <img
-                    src="/cta-mountains.jpg"
+                    src={UnderwaterBg}
                     alt="Ocean conservation"
                     className="w-full h-full object-cover"
                 />

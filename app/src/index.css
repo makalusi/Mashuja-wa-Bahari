@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800&family=Titan+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-=======
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&display=swap');
->>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
 
 @tailwind base;
 @tailwind components;
@@ -48,7 +44,6 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-<<<<<<< HEAD
     font-family: 'Nunito', sans-serif;
   }
 
@@ -73,9 +68,6 @@
     font-family: 'Nunito', sans-serif !important;
     letter-spacing: normal;
     text-transform: none;
-=======
-    font-family: 'Montserrat', sans-serif;
->>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
   }
 }
 
@@ -91,7 +83,6 @@
   .fluid-scroll {
     transition-timing-function: cubic-bezier(0.62, 0.05, 0.01, 0.99);
   }
-<<<<<<< HEAD
 
   .organic-shape-1 {
     border-radius: 36% 64% 46% 54% / 45% 54% 46% 55%;
@@ -124,8 +115,6 @@
     mask-position: center;
     -webkit-mask-position: center;
   }
-=======
->>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
 }
 
 /* Custom scrollbar */
@@ -268,21 +257,18 @@
 .tilt-card {
   transform-style: preserve-3d;
   perspective: 1000px;
-<<<<<<< HEAD
-}
 
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
   }
 
-  to {
-    transform: rotate(360deg);
+  .animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
   }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 12s linear infinite;
-=======
->>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
 }

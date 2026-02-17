@@ -56,19 +56,12 @@ const CTA = () => {
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
         <div
-<<<<<<< HEAD
           className={`transition-all duration-1000 custom-expo ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
-=======
-          className={`transition-all duration-1000 custom-expo ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
->>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
         >
           <span className="inline-block px-4 py-1.5 bg-white/10 text-cream text-sm font-medium rounded-full mb-6 backdrop-blur-sm">
             Stay Updated
           </span>
-<<<<<<< HEAD
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6 leading-tight">
             Join the club
@@ -76,35 +69,16 @@ const CTA = () => {
 
           <p className="text-lg md:text-xl text-cream/80 mb-10 max-w-xl mx-auto">
             Subscribe to the Mashujaa Dispatch for exclusive maritime routes, coastal camping hacks, and first dibs on our rugged expedition gear.
-=======
-          
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6 leading-tight">
-            Join the club
-          </h2>
-          
-          <p className="text-lg md:text-xl text-cream/80 mb-10 max-w-xl mx-auto">
-            Subscribe to our newsletter for exclusive deals, camping tips, and early access to new gear.
->>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
           </p>
 
           {/* Email Form */}
           <form
             onSubmit={handleSubmit}
-<<<<<<< HEAD
             className={`relative max-w-md mx-auto transition-all duration-300 ${isFocused ? 'transform scale-105' : ''
               }`}
           >
             <div className={`relative bg-white rounded-full overflow-hidden shadow-2xl transition-all duration-300 ${isFocused ? 'ring-4 ring-white/30' : ''
               }`}>
-=======
-            className={`relative max-w-md mx-auto transition-all duration-300 ${
-              isFocused ? 'transform scale-105' : ''
-            }`}
-          >
-            <div className={`relative bg-white rounded-full overflow-hidden shadow-2xl transition-all duration-300 ${
-              isFocused ? 'ring-4 ring-white/30' : ''
-            }`}>
->>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
               <div className="flex items-center">
                 <div className="pl-5 text-sage/50">
                   <Mail className="w-5 h-5" />
@@ -121,18 +95,10 @@ const CTA = () => {
                 <button
                   type="submit"
                   disabled={isSubmitted}
-<<<<<<< HEAD
                   className={`m-1.5 px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${isSubmitted
                     ? 'bg-green-500 text-white'
                     : 'bg-sage text-cream hover:bg-sage-dark'
                     }`}
-=======
-                  className={`m-1.5 px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
-                    isSubmitted
-                      ? 'bg-green-500 text-white'
-                      : 'bg-sage text-cream hover:bg-sage-dark'
-                  }`}
->>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
                 >
                   {isSubmitted ? (
                     <>
@@ -157,14 +123,8 @@ const CTA = () => {
 
         {/* Social Proof */}
         <div
-<<<<<<< HEAD
           className={`flex items-center justify-center gap-6 mt-12 transition-all duration-1000 custom-expo ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
-=======
-          className={`flex items-center justify-center gap-6 mt-12 transition-all duration-1000 custom-expo ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
->>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
           style={{ transitionDelay: '0.3s' }}
         >
           <div className="flex -space-x-3">
@@ -178,11 +138,7 @@ const CTA = () => {
             ))}
           </div>
           <div className="text-cream/80 text-sm">
-<<<<<<< HEAD
             <span className="font-semibold text-cream">500+</span> explorers are already on board. No fluff, just salt and spray.
-=======
-            <span className="font-semibold text-cream">2,500+</span> adventurers already joined
->>>>>>> da0dd3e4979742688a8eb74898452fc6e16f7275
           </div>
         </div>
       </div>
