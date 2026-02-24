@@ -77,9 +77,9 @@ const CTA = () => {
             className={`relative max-w-md mx-auto transition-all duration-300 ${isFocused ? 'transform scale-105' : ''
               }`}
           >
-            <div className={`relative bg-white rounded-full overflow-hidden shadow-2xl transition-all duration-300 ${isFocused ? 'ring-4 ring-white/30' : ''
+            <div className={`relative bg-white rounded-2xl sm:rounded-full overflow-hidden shadow-2xl transition-all duration-300 ${isFocused ? 'ring-4 ring-white/30' : ''
               }`}>
-              <div className="flex items-center">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center">
                 <div className="pl-5 text-sage/50">
                   <Mail className="w-5 h-5" />
                 </div>
@@ -90,7 +90,7 @@ const CTA = () => {
                   onFocus={() => setIsFocused(true)}
                   onBlur={() => setIsFocused(false)}
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-4 bg-transparent text-sage-dark placeholder:text-sage/50 focus:outline-none"
+                  className="flex-1 px-4 py-4 bg-transparent text-sage-dark placeholder:text-sage/50 focus:outline-none min-w-0"
                 />
                 <button
                   type="submit"

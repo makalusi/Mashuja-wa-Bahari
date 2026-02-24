@@ -194,7 +194,7 @@ const Destinations = () => {
                   <img
                     src={destination.image}
                     alt={destination.name}
-                    className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                    className="w-full h-auto transition-all duration-500 group-hover:scale-105"
                   />
                   {/* Rating Badge */}
                   <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-1.5">

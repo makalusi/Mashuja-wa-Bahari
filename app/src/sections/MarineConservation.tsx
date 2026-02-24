@@ -285,7 +285,7 @@ const MarineConservation: React.FC = () => {
                                         <div className="relative z-10 flex flex-col items-center justify-center py-20 px-6 space-y-12 text-center h-full">
                                             {/* Header */}
                                             <div className="space-y-2">
-                                                <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-display tracking-tight drop-shadow-md uppercase">
+                                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-display tracking-tight drop-shadow-md uppercase">
                                                     OUR PARTNERS
                                                 </h2>
                                                 <p className="text-white/90 text-lg md:text-xl font-medium font-sans tracking-wide max-w-2xl mx-auto drop-shadow-sm">
