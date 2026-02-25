@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Check, Loader2 } from 'lucide-react';
-import UnderwaterBg from '../assets/BB-03.jpg';
+import UnderwaterBg from '../assets/shark.jpg';
 
 interface FormData {
     fullName: string;
@@ -132,7 +132,7 @@ const GetInvolved = () => {
                             Get Involved
                         </span>
 
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6 leading-tight">
+                        <h2 className="text-5xl md:text-6xl lg:text-7xl font-logo font-bold text-cream mb-6 leading-tight uppercase tracking-widest">
                             Join the Movement
                         </h2>
 

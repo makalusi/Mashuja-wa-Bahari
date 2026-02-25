@@ -45,8 +45,8 @@ const CTA = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/cta-mountains.jpg"
-          alt="Majestic mountain landscape"
+          src="/shark.jpg"
+          alt="Ocean shark conservation"
           className="w-full h-full object-cover"
         />
         {/* Gradient Overlay */}
@@ -63,7 +63,7 @@ const CTA = () => {
             Stay Updated
           </span>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-logo font-bold text-cream mb-6 leading-tight uppercase tracking-widest">
             Join the club
           </h2>
 

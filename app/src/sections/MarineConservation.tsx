@@ -96,7 +96,7 @@ const MarineConservation: React.FC = () => {
 
     return (
         <div id="marine-conservation" className="text-[#00608F] min-h-screen relative overflow-x-hidden selection:bg-teal-200">
-            <div className="py-8 md:py-12">
+            <div className="py-0">
                 {/* Unified Section: Header + Impact + Spirit + Art */}
                 <div className="relative overflow-hidden group">
                     {/* Shared Background Image Layer */}
@@ -229,7 +229,7 @@ const MarineConservation: React.FC = () => {
                                     <div className="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden mb-6 relative shadow-inner">
                                         <img src={ArtImg1} alt="Mural Painting" className="w-full h-full object-cover group-hover/art-card:scale-110 transition-transform duration-700" />
                                     </div>
-                                    <h3 className="text-sage-light text-xl font-bold uppercase tracking-tight mb-2 font-comic text-balance">Visual Education</h3>
+                                    <h3 className="text-sage-light text-xl font-bold uppercase tracking-tight mb-2 font-primary text-balance">Visual Education</h3>
                                     <div className="h-1 w-12 bg-sage-light/20 rounded-full mb-3"></div>
                                 </div>
 
@@ -238,7 +238,7 @@ const MarineConservation: React.FC = () => {
                                     <div className="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden mb-6 relative shadow-inner">
                                         <img src={ArtImg2} alt="Community Workshop" className="w-full h-full object-cover group-hover/art-card:scale-110 transition-transform duration-700" />
                                     </div>
-                                    <h3 className="text-sage-light text-xl font-bold uppercase tracking-tight mb-3 font-comic text-balance">Creative Workshops</h3>
+                                    <h3 className="text-sage-light text-xl font-bold uppercase tracking-tight mb-3 font-primary text-balance">Creative Workshops</h3>
                                     <p className="text-[#00608F]/70 text-sm md:text-base font-semibold leading-relaxed px-2">
                                         Bringing fresh ideas, they lead beach cleanups, educate peers, and turn marine litter into art.
                                     </p>
@@ -249,7 +249,7 @@ const MarineConservation: React.FC = () => {
                                     <div className="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden mb-6 relative shadow-inner">
                                         <img src={ArtImg3} alt="Plastic Art on Beach" className="w-full h-full object-cover group-hover/art-card:scale-110 transition-transform duration-700" />
                                     </div>
-                                    <h3 className="text-sage-light text-xl font-bold uppercase tracking-tight mb-3 font-comic text-balance">Community Engagement</h3>
+                                    <h3 className="text-sage-light text-xl font-bold uppercase tracking-tight mb-3 font-primary text-balance">Community Engagement</h3>
                                     <p className="text-[#00608F]/70 text-sm md:text-base font-semibold leading-relaxed px-2">
                                         Empowering them to protect nesting sites, lead restoration, and promote marine ethics.
                                     </p>

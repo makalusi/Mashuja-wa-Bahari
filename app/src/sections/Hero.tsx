@@ -2,29 +2,80 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const HERO_IMAGES = [
+  { src: '/hero/main.jpg', alt: 'Mashujaa wa Bahari – Main' },
+  { src: '/hero/image-1.jpg', alt: 'Ocean conservation art 1' },
+  { src: '/hero/image-2.jpg', alt: 'Ocean conservation art 2' },
+  { src: '/hero/image-3.jpg', alt: 'Ocean conservation art 3' },
+  { src: '/hero/image-4.jpg', alt: 'Ocean conservation art 4' },
+];
+
+const HERO_TEXTS = [
+  'Celebrating the Art of Marine Conservation: Honoring the guardians who keep our blue world alive.',
+  "Mastering the Art of the Sea. We recognize the skill, bravery, and dedication of Kenya's maritime heroes.",
+  'The Art of Protection. Join us as we shine a light on the legendary figures safeguarding our coastal heritage.',
+  'Defining the Art of the Blue Economy through sustainable innovation and tireless maritime service.',
+  'Every wave tells a story of the Art of Bravery. Nominate a hero who has mastered the depths.',
+];
+
+const CYCLE_MS = 5000;
+const TRANSITION_MS = 1200; // shared duration for both image & text
+
+/** Render text with "Art" highlighted in a premium blue badge */
+const renderHighlightedText = (text: string) => {
+  const parts = text.split(/(Art)/g);
+  return parts.map((part, i) =>
+    part === 'Art' ? (
+      <span key={i} className="relative inline-block mx-1">
+        <span
+          className="relative z-10 px-3 py-0.5 text-white font-extrabold"
+          style={{ letterSpacing: '0.04em' }}
+        >
+          Art
+        </span>
+        <span
+          className="absolute inset-0 rounded-md bg-[#02457a] shadow-lg shadow-[#02457a]/40"
+          style={{ transform: 'skewX(-3deg)' }}
+        />
+      </span>
+    ) : (
+      <span key={i}>{part}</span>
+    )
+  );
+};
+
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animKey, setAnimKey] = useState(0);
 
   useEffect(() => {
     setIsLoaded(true);
-
     const handleScroll = () => {
-      if (heroRef.current) {
-        const rect = heroRef.current.getBoundingClientRect();
-        if (rect.bottom > 0) {
-          setScrollY(window.scrollY);
-        }
+      if (heroRef.current && heroRef.current.getBoundingClientRect().bottom > 0) {
+        setScrollY(window.scrollY);
       }
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const parallaxOffset = scrollY * 0.3;
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+      setAnimKey((k) => k + 1);
+    }, CYCLE_MS);
+    return () => clearInterval(timer);
+  }, []);
+
   const opacityFade = Math.max(0, 1 - scrollY / 600);
+
+  const handleDotClick = (i: number) => {
+    setActiveIndex(i);
+    setAnimKey((k) => k + 1);
+  };
 
   return (
     <section
@@ -32,73 +83,60 @@ const Hero = () => {
       ref={heroRef}
       className="relative min-h-screen w-full overflow-hidden grain-overlay"
     >
-      {/* Background Image with Parallax */}
-      <div
-        className="absolute inset-0 w-full h-[120%] hero-parallax"
-        style={{ transform: `translateY(${parallaxOffset}px)` }}
-      >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className={`w-full h-full object-cover transition-all duration-1000 ${isLoaded ? 'scale-100 blur-0' : 'scale-110 blur-sm'
-            }`}
-        >
-          <source src="/hero-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
-      </div>
-
-      {/* Floating Dust Particles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(15)].map((_, i) => (
+      {/* ── Full-screen Image Carousel ── */}
+      {HERO_IMAGES.map((img, index) => {
+        const isActive = index === activeIndex;
+        return (
           <div
-            key={i}
-            className="absolute w-1 h-1 bg-cream/30 rounded-full animate-float"
+            key={img.src}
+            className="absolute inset-0 w-full h-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 4}s`,
-              animationDuration: `${4 + Math.random() * 4}s`,
+              opacity: isActive ? 1 : 0,
+              transform: isActive ? 'scale(1.02)' : 'scale(1.08)',
+              transition: `opacity ${TRANSITION_MS}ms ease-in-out, transform ${CYCLE_MS}ms ease-out`,
+              zIndex: isActive ? 2 : 1,
             }}
-          />
-        ))}
-      </div>
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        );
+      })}
 
-      {/* Content */}
+      {/* Gradient overlay — heavier on left for text readability */}
       <div
-        className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center"
+        className="absolute inset-0 z-[3] pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.40) 45%, rgba(0,0,0,0.08) 75%, rgba(0,0,0,0.25) 100%)',
+        }}
+      />
+
+      {/* ── Unified left content container (text + CTA) — vertically centered ── */}
+      <div
+        className="relative z-10 flex items-center min-h-screen px-6 md:px-12 lg:px-20"
         style={{ opacity: opacityFade }}
       >
-        <div className="w-[75%] mx-auto">
-          {/* Headline */}
-          <h1
-            className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-white mb-8 tracking-tight font-stylish transition-all duration-1000 custom-expo ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            style={{ transitionDelay: '0.2s' }}
+        <div className="w-full md:w-1/2 lg:w-[45%] flex flex-col gap-8 md:gap-10">
+          {/* Dynamic headline text */}
+          <div
+            key={animKey}
+            className="hero-text-enter"
           >
-            ART FOR OCEAN
-            <br />
-            <span className="text-tan">CONSERVATION</span>
-          </h1>
-
-          {/* Description */}
-          <p
-            className={`text-xl md:text-2xl lg:text-3xl text-white/90 mx-auto mb-12 leading-relaxed transition-all duration-1000 custom-expo ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            style={{ transitionDelay: '0.4s' }}
-          >
-            Using art to educate, engage, and inspire coastal communities on the importance of marine conservation while promoting sustainable ocean practices.
-          </p>
+            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-5xl font-bold text-white leading-snug md:leading-snug lg:leading-tight tracking-tight drop-shadow-lg">
+              {renderHighlightedText(HERO_TEXTS[activeIndex])}
+            </p>
+          </div>
 
           {/* CTA Buttons */}
           <div
-            className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-1000 custom-expo ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`flex flex-col sm:flex-row items-start gap-4 transition-all duration-1000 custom-expo ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
-            style={{ transitionDelay: '0.6s' }}
+            style={{ transitionDelay: '0.4s' }}
           >
             <a
               href="#about"
@@ -117,23 +155,22 @@ const Hero = () => {
               View Gallery
             </Link>
           </div>
-        </div>
-      </div>
 
-      {/* Wave Divider */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20">
-        <svg
-          className="relative block w-[calc(100%+1.3px)] h-[80px] md:h-[120px]"
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.43,130,119.49,192.65,107.4,252.09,95.9,285.47,63.1,321.39,56.44Z"
-            className="fill-cream"
-          ></path>
-        </svg>
+          {/* Indicator dots — aligned with content */}
+          <div className="flex gap-2">
+            {HERO_IMAGES.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => handleDotClick(i)}
+                aria-label={`Show image ${i + 1}`}
+                className={`w-2.5 h-2.5 rounded-full border border-white/60 transition-all duration-500 ${i === activeIndex
+                    ? 'bg-white scale-125'
+                    : 'bg-white/30 hover:bg-white/60'
+                  }`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
