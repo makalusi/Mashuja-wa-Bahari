@@ -74,7 +74,8 @@ const Gallery = () => {
             <main className="relative z-10 container mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-24 max-w-7xl">
                 <motion.div
                     initial="hidden"
-                    animate="visible"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
                     variants={{
                         hidden: { opacity: 0 },
                         visible: {

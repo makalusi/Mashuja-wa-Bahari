@@ -19,7 +19,6 @@ interface FormData {
 
 const GetInvolved = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
-    const [isVisible, setIsVisible] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [focusedField, setFocusedField] = useState<string | null>(null);
@@ -41,21 +40,6 @@ const GetInvolved = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.unobserve(entry.target);
-                }
-            },
-            { threshold: 0.3 }
-        );
-
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
-        return () => observer.disconnect();
     }, []);
 
     const skillOptions = [
@@ -124,8 +108,7 @@ const GetInvolved = () => {
             {/* Content */}
             <div className="relative z-10 max-w-4xl mx-auto px-6">
                 <div
-                    className={`transition-all duration-1000 custom-expo ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                        }`}
+                    className="transition-all duration-1000 custom-expo"
                 >
                     <div className="text-center mb-12">
                         <span className="inline-block px-4 py-1.5 bg-white/10 text-cream text-sm font-medium rounded-full mb-6 backdrop-blur-sm">

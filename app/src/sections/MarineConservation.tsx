@@ -110,9 +110,28 @@ const MarineConservation: React.FC = () => {
 
                     <div className="relative z-10 max-w-6xl mx-auto px-4 py-16 space-y-16">
                         {/* Section 1: Top Cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-8">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
+                            variants={{
+                                hidden: {},
+                                visible: {
+                                    transition: {
+                                        staggerChildren: 0.2
+                                    }
+                                }
+                            }}
+                            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-8"
+                        >
                             {/* Card 1 */}
-                            <div className="relative group/card">
+                            <motion.div
+                                variants={{
+                                    hidden: { opacity: 0, y: 30 },
+                                    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                                }}
+                                className="relative group/card"
+                            >
                                 <div
                                     className="relative bg-[#00608F] p-8 md:p-6 lg:p-8 min-h-[200px] flex flex-col justify-center items-center text-center text-white"
                                     style={{ borderRadius: '45% 55% 40% 60% / 55% 45% 65% 35%', boxShadow: '6px 8px 0px rgba(0,0,0,0.1)' }}
@@ -120,10 +139,16 @@ const MarineConservation: React.FC = () => {
                                     <h3 className="text-2xl lg:text-3xl tracking-tight leading-none mb-3 drop-shadow-md font-display">MARINE PRESERVATION</h3>
                                     <p className="text-lg md:text-xl font-semibold leading-snug opacity-90">Protecting coral reefs and sea turtles.</p>
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Card 2 */}
-                            <div className="relative group/card mt-4 md:mt-0">
+                            <motion.div
+                                variants={{
+                                    hidden: { opacity: 0, y: 30 },
+                                    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                                }}
+                                className="relative group/card mt-4 md:mt-0"
+                            >
                                 <div
                                     className="relative bg-[#00608F] p-8 md:p-6 lg:p-8 min-h-[200px] flex flex-col justify-center items-center text-center text-white"
                                     style={{ borderRadius: '55% 45% 60% 40% / 40% 60% 35% 65%', boxShadow: '4px 8px 0px rgba(0,0,0,0.1)' }}
@@ -131,10 +156,16 @@ const MarineConservation: React.FC = () => {
                                     <h3 className="text-2xl lg:text-3xl tracking-tight leading-none mb-3 drop-shadow-md font-display">COMMUNITY EMPOWERMENT</h3>
                                     <p className="text-lg md:text-xl font-semibold leading-snug opacity-90">Supporting coastal livelihoods.</p>
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Card 3 */}
-                            <div className="relative group/card mt-4 md:mt-0">
+                            <motion.div
+                                variants={{
+                                    hidden: { opacity: 0, y: 30 },
+                                    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                                }}
+                                className="relative group/card mt-4 md:mt-0"
+                            >
                                 <div
                                     className="relative bg-[#00608F] p-8 md:p-6 lg:p-8 min-h-[200px] flex flex-col justify-center items-center text-center text-white"
                                     style={{ borderRadius: '40% 60% 45% 55% / 55% 40% 60% 40%', boxShadow: '6px 6px 0px rgba(0,0,0,0.1)' }}
@@ -142,8 +173,8 @@ const MarineConservation: React.FC = () => {
                                     <h3 className="text-2xl lg:text-3xl tracking-tight leading-none mb-3 drop-shadow-md font-display">YOUTH INNOVATION</h3>
                                     <p className="text-lg md:text-xl font-semibold leading-snug opacity-90">STEM and tech for marine tracking.</p>
                                 </div>
-                            </div>
-                        </div>
+                            </motion.div>
+                        </motion.div>
 
                         {/* Section 2: Our Impact */}
                         <div className="space-y-12">
@@ -173,7 +204,13 @@ const MarineConservation: React.FC = () => {
                         </div>
 
                         {/* Section 3: Mashujaa Spirit */}
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+                        >
                             {/* Left: Branding Image */}
                             <div className="relative flex justify-center lg:justify-end p-2">
                                 <div className="relative w-full max-w-lg aspect-square rounded-[3rem] overflow-hidden shadow-hover border-4 border-white/50 animate-float">
@@ -200,12 +237,18 @@ const MarineConservation: React.FC = () => {
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* Section 4: Art For Oceans Sake */}
                         <div className="space-y-12">
                             {/* Header Section */}
-                            <div className="flex flex-col items-center space-y-10">
+                            <motion.div
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                className="flex flex-col items-center space-y-10"
+                            >
                                 {/* Title with Organic Blue Background Shape */}
                                 <div className="relative py-8 px-12 md:px-24 z-10 flex justify-center items-center">
                                     <svg className="absolute inset-0 w-full h-full text-[#00608F] fill-current -z-10 drop-shadow-lg transform scale-105" viewBox="0 0 500 100" preserveAspectRatio="none">
@@ -220,21 +263,46 @@ const MarineConservation: React.FC = () => {
                                 <p className="text-[#00608F]/80 text-lg md:text-xl text-center max-w-5xl mx-auto leading-relaxed font-medium md:px-6">
                                     <span className="font-extrabold text-[#00608F]">Mashujaa Bahari</span> is a unique marine conservation project that harnesses the transformative power of art—visuals, storytelling, and community workshops—to bridge the knowledge gap in coastal communities. We illuminate marine ecosystems, fostering a deep understanding and stewardship for our oceans among fishermen, youth, and women.
                                 </p>
-                            </div>
+                            </motion.div>
 
                             {/* Cards Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-10">
+                            <motion.div
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.2 }}
+                                variants={{
+                                    hidden: {},
+                                    visible: {
+                                        transition: {
+                                            staggerChildren: 0.2
+                                        }
+                                    }
+                                }}
+                                className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-10"
+                            >
                                 {/* Card 1: Visual Education */}
-                                <div className="bg-white rounded-[2rem] p-5 pb-8 shadow-soft flex flex-col items-center text-center group/art-card hover:-translate-y-2 transition-all duration-300">
+                                <motion.div
+                                    variants={{
+                                        hidden: { opacity: 0, scale: 0.95, y: 20 },
+                                        visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6 } }
+                                    }}
+                                    className="bg-white rounded-[2rem] p-5 pb-8 shadow-soft flex flex-col items-center text-center group/art-card hover:-translate-y-2 transition-all duration-300"
+                                >
                                     <div className="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden mb-6 relative shadow-inner">
                                         <img src={ArtImg1} alt="Mural Painting" className="w-full h-full object-cover group-hover/art-card:scale-110 transition-transform duration-700" />
                                     </div>
                                     <h3 className="text-sage-light text-xl font-bold uppercase tracking-tight mb-2 font-primary text-balance">Visual Education</h3>
                                     <div className="h-1 w-12 bg-sage-light/20 rounded-full mb-3"></div>
-                                </div>
+                                </motion.div>
 
                                 {/* Card 2: Creative Workshops */}
-                                <div className="bg-white rounded-[2rem] p-5 pb-8 shadow-soft flex flex-col items-center text-center group/art-card hover:-translate-y-2 transition-all duration-300">
+                                <motion.div
+                                    variants={{
+                                        hidden: { opacity: 0, scale: 0.95, y: 20 },
+                                        visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6 } }
+                                    }}
+                                    className="bg-white rounded-[2rem] p-5 pb-8 shadow-soft flex flex-col items-center text-center group/art-card hover:-translate-y-2 transition-all duration-300"
+                                >
                                     <div className="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden mb-6 relative shadow-inner">
                                         <img src={ArtImg2} alt="Community Workshop" className="w-full h-full object-cover group-hover/art-card:scale-110 transition-transform duration-700" />
                                     </div>
@@ -242,10 +310,16 @@ const MarineConservation: React.FC = () => {
                                     <p className="text-[#00608F]/70 text-sm md:text-base font-semibold leading-relaxed px-2">
                                         Bringing fresh ideas, they lead beach cleanups, educate peers, and turn marine litter into art.
                                     </p>
-                                </div>
+                                </motion.div>
 
                                 {/* Card 3: Community Engagement */}
-                                <div className="bg-white rounded-[2rem] p-5 pb-8 shadow-soft flex flex-col items-center text-center group/art-card hover:-translate-y-2 transition-all duration-300">
+                                <motion.div
+                                    variants={{
+                                        hidden: { opacity: 0, scale: 0.95, y: 20 },
+                                        visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6 } }
+                                    }}
+                                    className="bg-white rounded-[2rem] p-5 pb-8 shadow-soft flex flex-col items-center text-center group/art-card hover:-translate-y-2 transition-all duration-300"
+                                >
                                     <div className="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden mb-6 relative shadow-inner">
                                         <img src={ArtImg3} alt="Plastic Art on Beach" className="w-full h-full object-cover group-hover/art-card:scale-110 transition-transform duration-700" />
                                     </div>
@@ -253,15 +327,21 @@ const MarineConservation: React.FC = () => {
                                     <p className="text-[#00608F]/70 text-sm md:text-base font-semibold leading-relaxed px-2">
                                         Empowering them to protect nesting sites, lead restoration, and promote marine ethics.
                                     </p>
-                                </div>
-                            </div>
+                                </motion.div>
+                            </motion.div>
 
                             {/* Bottom Button */}
-                            <div className="flex justify-center pt-8">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.5 }}
+                                transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+                                className="flex justify-center pt-8"
+                            >
                                 <button className="group relative bg-[#F0F9FB] border-[2.5px] border-sage-light text-sage-dark font-bold py-3.5 px-8 rounded-full uppercase tracking-wide transition-all duration-300 hover:bg-sage-light hover:text-white hover:shadow-lg hover:shadow-sage-light/30 text-sm md:text-base flex items-center gap-2">
                                     Learn More About Our Art Initiatives
                                 </button>
-                            </div>
+                            </motion.div>
 
                             {/* Section 5: Our Partners (Wavy Ribbon) */}
                             <div className="md:py-20 pt-12 pb-12 relative mt-16">
@@ -284,32 +364,69 @@ const MarineConservation: React.FC = () => {
                                         {/* Content */}
                                         <div className="relative z-10 flex flex-col items-center justify-center py-20 px-6 space-y-12 text-center h-full">
                                             {/* Header */}
-                                            <div className="space-y-2">
+                                            <motion.div
+                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                whileInView={{ opacity: 1, scale: 1 }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 0.8 }}
+                                                className="space-y-2"
+                                            >
                                                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-display tracking-tight drop-shadow-md uppercase">
                                                     OUR PARTNERS
                                                 </h2>
                                                 <p className="text-white/90 text-lg md:text-xl font-medium font-sans tracking-wide max-w-2xl mx-auto drop-shadow-sm">
                                                     Organizations helping us achieve our mission.
                                                 </p>
-                                            </div>
+                                            </motion.div>
 
                                             {/* Logos */}
-                                            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 w-full max-w-5xl">
+                                            <motion.div
+                                                initial="hidden"
+                                                whileInView="visible"
+                                                viewport={{ once: true, amount: 0.3 }}
+                                                variants={{
+                                                    hidden: {},
+                                                    visible: {
+                                                        transition: {
+                                                            staggerChildren: 0.2
+                                                        }
+                                                    }
+                                                }}
+                                                className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 w-full max-w-5xl"
+                                            >
                                                 {/* Logo 1: Bow Seat */}
-                                                <div className="flex flex-col items-center justify-center group opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+                                                <motion.div
+                                                    variants={{
+                                                        hidden: { opacity: 0, y: 20 },
+                                                        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                                                    }}
+                                                    className="flex flex-col items-center justify-center group opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105"
+                                                >
                                                     <img src={PartnerLogo1} alt="Bow Seat" className="h-24 md:h-32 w-auto object-contain" />
-                                                </div>
+                                                </motion.div>
 
                                                 {/* Logo 2: The Nature Conservancy */}
-                                                <div className="flex items-center gap-3 group opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+                                                <motion.div
+                                                    variants={{
+                                                        hidden: { opacity: 0, y: 20 },
+                                                        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                                                    }}
+                                                    className="flex items-center gap-3 group opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105"
+                                                >
                                                     <img src={PartnerLogo2} alt="The Nature Conservancy" className="h-24 md:h-32 w-auto object-contain" />
-                                                </div>
+                                                </motion.div>
 
                                                 {/* Logo 3: Fellowship Badge */}
-                                                <div className="relative group opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+                                                <motion.div
+                                                    variants={{
+                                                        hidden: { opacity: 0, y: 20 },
+                                                        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                                                    }}
+                                                    className="relative group opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105"
+                                                >
                                                     <img src={PartnerLogo3} alt="Fellowship Program" className="h-32 md:h-44 w-auto object-contain" />
-                                                </div>
-                                            </div>
+                                                </motion.div>
+                                            </motion.div>
                                         </div>
                                     </div>
                                 </div>
